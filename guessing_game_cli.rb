@@ -1,11 +1,11 @@
 # Code your solution here!
 
 def random_number
-  rand(1..6)
+  rand(6) + 1
 end
 
 def prompt_user
-  puts "Guess a number between 1 through 6"
+  puts "Guess a number between 1 and 6:"
 end
 
 def get_user_input
@@ -15,14 +15,14 @@ end
 
 
 def run_guessing_game
+  prompt_user
   input = get_user_input
   number = random_number
-  prompt_user 
-  if input == number
+  if input == number.to_s 
     puts "You guessed the correct number!"
-  elsif input == exit
+  elsif input == "exit"
     puts "Goodbye!"
-  else
+  else 
     puts "Sorry! The computer guessed #{number}."
   end
 end
